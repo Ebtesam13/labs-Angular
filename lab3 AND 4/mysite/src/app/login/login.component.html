@@ -1,0 +1,24 @@
+<form #signin="ngForm" (ngSubmit)="signIn(signin)" class="facebook-form">
+    <div class="m-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" name="email" ngModel class="form-control" id="exampleInputEmail1" required #email="ngModel" aria-describedby="emailHelp">
+        @if(email.invalid && email.touched) {
+        @if(email.errors?.['required']) {
+        <div id="emailHelp" class="form-text">Email is required</div>
+        }
+        }
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" name="password" ngModel #password="ngModel" required minlength="9" class="form-control" id="exampleInputPassword1">
+        @if(password.invalid && password.touched) {
+        @if(password.errors?.['minlength']) {
+        <div id="passwordHelp" class="form-text">Password must be more than 8 characters</div>
+        }
+        @if(password.errors?.['required']) {
+        <div id="passwordHelp" class="form-text">Password is required</div>
+        }
+        }
+    </div>
+    <button type="submit" class="btn btn-primary">Log In</button>
+</form>

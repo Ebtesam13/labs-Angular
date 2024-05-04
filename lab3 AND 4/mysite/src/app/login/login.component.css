@@ -1,0 +1,16 @@
+.facebook-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f7f7f7;
+}
+
+.facebook-form .form-control {
+    border-radius: 5px;
+}
+
+.facebook-form button {
+    border-radius: 5px;
+}

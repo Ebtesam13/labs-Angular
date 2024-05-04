@@ -1,0 +1,21 @@
+<div class="card mt-4" style="width: 300px;">
+   <div class="image">
+    <img [src]="content.images[0]"  class="card-img-top" alt="">
+  </div>
+    <div class="card-body">
+      <h3 class="card-title">{{content.title}}</h3>
+      <div class="card-text">
+        {{content.price}}
+        {{content.description}}
+        </div>
+      @if(content.stock>0)
+      {
+        <p class="badge bg-success">InStock</p>
+      }
+      @else{
+        <p class="badge bg-danger">OutStock</p>
+
+      }
+      <br><button  (click)="showDetails(content.id)" class="btn btn-info" style="width: 120px;">View</button>
+    </div>    
+  </div>
